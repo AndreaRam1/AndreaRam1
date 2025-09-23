@@ -22,7 +22,7 @@ int main() {
 
     //Greet costumer and take order
     cout << "Welcome to our CSC 134 Ramen Restaurant!!" << endl;
-    cout << "You orderer one " << item << "." << endl;
+    cout << "You ordered one " << item << "." << endl;
 
     // Claculate the price, sales tax and the total price
     tax_amount = item_price * tax_percent; // Take the 8% of the item
@@ -30,7 +30,17 @@ int main() {
     
     // Print the receipt
     cout << setprecision(2) << fixed;
-    cout << total << endl;
+    cout << "Thank you for shopping ramen🍜 with us!!" << endl;
+    cout << "--------------------------------------" << endl;
+    cout << item << "\t\t$" << item_price              << endl;
+    cout << "Tax" << "\t\t$" << tax_amount           << endl;
+    cout << "--------------------------------------" << endl;
+    cout << "Total" << "\t\t$" << total <<endl;
+    cout << endl;
+
+
+    cout << "See you soon!" << endl;
+    cout << endl;
 
 
     return 0; 
