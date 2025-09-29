@@ -9,7 +9,7 @@ using namespace std;
 #include <ctime>
 
 int main() {
-    cout << "Lets roll some dice!" << endl;
+    cout << "Lets roll some dice! Good luck!! " << endl;
     int seed = time (0);
     srand (seed);
     //int roll;
