@@ -23,16 +23,29 @@ int main() {
 
     total = roll1 + roll2;
     cout << "Your total roll is: " << total << endl;
-    
 
+    if (total == 7) {
+        cout << "YOU WIN!!" << endl;
 
-    //cout << roll << endl; 
+    }
+    else if  (total == 11) {
+        cout <<"Eleven is a winner!!" << endl;
 
-    //roll = ( rand() % SIDES);
-    //cout << roll << endl;
+    } 
+    else if (total == 2 ) {
+        cout << "Too bad, You lose." << endl;
 
-    //roll = (rand() % SIDES);
-    //cout << roll << endl;
+    }
+    else if (total == 3) {
+        cout << "Sorry. You lose." << endl;
+
+    }
+    else if (total == 12 ) {
+        cout << "To bad you lose." << endl;
+    }
+    else {
+        cout << "Roll again!!" << endl;
+    }
 
     return 0;
 }
