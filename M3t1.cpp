@@ -36,6 +36,16 @@ int main() {
         
     
     }
-     
+    if (area_1 > area_2) {
+        cout << "Rectangle 1 is bigger" << endl;
+
+    }
+    else if (area_1 < area_2) {
+        cout << "Rectangle 2 is bigger" << endl;
+
+    }
+    else if (area_1 == area_2) {
+        cout << "They are the same size" << endl; 
+    }
     return 0; 
 }
