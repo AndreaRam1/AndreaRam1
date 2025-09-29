@@ -9,18 +9,30 @@ using namespace std;
 #include <ctime>
 
 int main() {
-    const int SIDES = 3;
+    cout << "Lets roll some dice!" << endl;
     int seed = time (0);
     srand (seed);
-    int roll;
-    roll = ( (rand() % SIDES)+1 );
-    cout << roll << endl; 
+    //int roll;
+    const int MAX= 3;
+    int roll1, roll2, total;
+    roll1 = (rand() % MAX) + 1;
+    cout << "Your roll was: " << roll1 << endl;
 
-    roll = ( rand() % SIDES);
-    cout << roll << endl;
+    roll2 = (rand() % MAX) + 1;
+    cout << "Your roll was: " << roll2 << endl;
 
-    roll = (rand() % SIDES);
-    cout << roll << endl;
+    total = roll1 + roll2;
+    cout << "Your total roll is: " << total << endl;
+    
+
+
+    //cout << roll << endl; 
+
+    //roll = ( rand() % SIDES);
+    //cout << roll << endl;
+
+    //roll = (rand() % SIDES);
+    //cout << roll << endl;
 
     return 0;
 }
