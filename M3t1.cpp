@@ -22,7 +22,7 @@ int main() {
     cout << " separeted by a space." << endl;
     cin >> width_2 >> length_2;
  // Condition to exclude 0 and negatives 
-    if (width_1 <= 0 || length_1 <= 0 || width_2 <= 0 || length_2 <= 0 ) {
+    if (width_1 > 0 && length_1 > 0 && width_2 > 0 && length_2 > 0) {
        // Answer
         area_1 = width_1 * length_1;
         area_2 = width_2 * length_2; 
@@ -30,12 +30,12 @@ int main() {
         cout << "Rectangle 2 has area of " << area_2 << endl;
        
     }
-     cout << "Dimensions must be greater than 0" << endl;
-        return 1;
-
-   
-    // Results
+    else {
+        cout << "Dimensions must be greater than 0 🧮" << endl;
+        cout << "Please enter dimensions again" << endl; 
+        
     
-
+    }
+     
     return 0; 
 }
