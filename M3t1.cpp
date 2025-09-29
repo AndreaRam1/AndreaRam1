@@ -14,21 +14,28 @@ int main() {
 
     //Instructions
 
-    cout << " Please enter the width and length for the firts rectangle" << endl;
+    cout << " Please enter the width and length for the firts rectangle 📏" << endl;
     cout << " separeted by a space." << endl;
     cin >> width_1 >> length_1;
 
-    cout << " Please enter the width and length for the second rectangle" << endl;
+    cout << " Please enter the width and length for the second rectangle 📏" << endl;
     cout << " separeted by a space." << endl;
     cin >> width_2 >> length_2;
+ // Condition to exclude 0 and negatives 
+    if (width_1 <= 0 || length_1 <= 0 || width_2 <= 0 || length_2 <= 0 ) {
+       // Answer
+        area_1 = width_1 * length_1;
+        area_2 = width_2 * length_2; 
+        cout <<" Rectangle 1 has area of " << area_1 << endl;
+        cout << "Rectangle 2 has area of " << area_2 << endl;
+       
+    }
+     cout << "Dimensions must be greater than 0" << endl;
+        return 1;
 
-    // Answer
-    area_1 = width_1 * length_1;
-    area_2 = width_2 * length_2;
-
+   
     // Results
-    cout <<" Rectangle 1 has area of " << area_1 << endl;
-    cout << "Rectangle 2 has area of " << area_2 << endl;
+    
 
     return 0; 
 }
