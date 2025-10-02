@@ -88,8 +88,50 @@ int main() {
     cout << "============Pizza party===============" << endl;
 
     
+    int pizzasOrdered, slicesPerPizza, numberOfGuests, totalSlices, slicesNeeded, leftovers;
 
-    
+    cout << "How many pizzas did you order? ";
+    cin >> pizzasOrdered;
+    cout << "How many slices per pizza? ";
+    cin >> slicesPerPizza;
+    cout << "How many visitors are coming? ";
+    cin >> numberOfGuests;
+
+    //Calculations
+
+    totalSlices = pizzasOrdered * slicesPerPizza;
+    slicesNeeded = numberOfGuests * 3; // 3 slices per guest
+    leftovers = totalSlices - slicesNeeded;
+
+    // Results
+
+    cout << "Total slices available: " << totalSlices << endl;
+    cout << "Total slices needed: " << slicesNeeded << endl;
+    cout << "Leftover slices: " << leftovers << endl;
+
+    //Question #4: Cheering program
+
+    cout << "======================================" << endl;
+    cout << "=============Question 4===============" << endl;
+    cout << "===========Cheering program===========" << endl;
+
+    //Variables
+
+    string letsGo = "Let's go ";
+    string school = "FTCC";
+    string team   = "Trojans";
+    string cheerOne = letsGo + school;
+    string cheerTwo = letsGo + team;
+
+    cout << cheerOne << endl;
+    cout << cheerOne << endl;
+    cout << cheerOne << endl;
+    cout << cheerTwo << endl;
+
+    cout << "=============================" << endl;
+    cout << "======End of questions=======" << endl;
+    cout << "=============================" << endl; 
+
 
     return 0;
 
