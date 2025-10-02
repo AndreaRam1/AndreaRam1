@@ -22,12 +22,12 @@ int main() {
     cout << setprecision(2) << fixed << showpoint;
 
     // User input
-    cout << "Enter the simensions o fthe crate in feet: " << endl;
-    cout << "Lenght: " << endl;
+    cout << "Enter the dimensions of the crate in feet" << endl;
+    cout << "Lenght: ";
     cin >> crateLength; 
-    cout << "Width: " << endl;
+    cout << "Width: ";
     cin >> crateWidth;
-    cout << "Height: " << endl;
+    cout << "Height: ";
     cin >> crateHeight;
 
     //Calculations
