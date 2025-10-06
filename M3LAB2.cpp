@@ -22,27 +22,27 @@ int main() {
         cout << "Invalid grade. Please enter a number between 0 and 100." << endl;
         return 1; // For invalid input exit te program
     }
-    char lettergrade; // variable for the letter grade
+    char letterGrade; // variable for the letter grade
 
     // Make the conversion 
     if (grade >= 90 && grade <= 100) {
-        lettergrade = 'A';
+        letterGrade = 'A';
     }
     else if (grade >= 80 && grade <=89) {
-        lettergrade = 'B';
+        letterGrade = 'B';
     }
     else if (grade >= 70 && grade <=79) {
-        lettergrade = 'C';
+        letterGrade = 'C';
     }
     else if (grade >=60 && grade <=69) {
-        lettergrade = 'D';
+        letterGrade = 'D';
     }
     else {
-        lettergrade = 'F'; //any number between 0 and 59
+        letterGrade = 'F'; //any number between 0 and 59
     }
 
     // Results
-    cout << "Your letter grade is: " << lettergrade << endl;
+    cout << "Your letter grade is: " << letterGrade << endl;
 
     return 0;
 }
