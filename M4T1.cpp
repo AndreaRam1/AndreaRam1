@@ -24,5 +24,12 @@ int main() {
     int num = MIN_NUMBER;
 
     cout << "Number    Number Squared" << endl; 
+
+    while (num <= MAX_NUMBER) {
+        cout << num << "\t\t" << num * num << endl;
+        num ++;
+
+    }
+    return 0;
 }
 
