@@ -25,7 +25,7 @@ using namespace std;
         cout << "=====M3WH1 - Main Menu=====" << endl;
         cout << "===========================" << endl;
         cout << "1. Question 1 - Chat Bot 🤖..........." << endl;
-        cout << "2. Question 2 - Receip Calcullator 🍜.." << endl;
+        cout << "2. Question 2 - Receip Calculator 🍜.." << endl;
         cout << "3. QUESTION 3 - Choose your own andventure🎲" << endl;
         cout << "4. Question 4 - Math Practice🧮............" << endl;
         cout << "0. Exit" << endl;
@@ -88,7 +88,7 @@ void question1() {
 void question2() {
     cout << "=================================" << endl; 
     cout << "===========Question 2============" << endl; 
-    cout << "=====Receip Calcullator 🍜======" << endl;
+    cout << "=====Receip Calculator 🍜======" << endl;
     cout << "=================================" << endl;
     // Purpose: Calculate meal cost with tax and optional tip for dine-in orders
  
