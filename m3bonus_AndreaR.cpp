@@ -16,7 +16,7 @@ int main() {
     int tries = 0;
     char again = 'y';
 
-    cout << "Welcome to my Number Guessing Game!" << endl;
+    cout << "Welcome to my Number Guessing Game!🎲" << endl;
 
     // Main game loop
     while (again == 'y' || again == 'Y') {
@@ -25,11 +25,11 @@ int main() {
         guess = 0;
         tries = 0;
 
-        cout << "I'm thinking of a number between 1 and 50." << endl;
+        cout << "I'm thinking of a number between 1 and 50.💭" << endl;
 
         // Ask the player for guesses
         while (guess != secretNumber) {
-            cout << "Enter your guess: ";
+            cout << "Enter your guess🤔: ";
             cin >> guess;
             tries++;
 
