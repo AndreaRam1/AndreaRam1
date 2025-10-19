@@ -34,10 +34,10 @@ int main() {
             tries++;
 
             if (guess > secretNumber) {
-                cout << "Too high. Try again!" << endl;
+                cout << "Too high. Try again!🐈" << endl;
             } 
             else if (guess < secretNumber) {
-                cout << "Too low. Try again!" << endl;
+                cout << "Too low. Try again!🦥" << endl;
             } 
             else {
                 cout << "You got it in " << tries << " tries!" << endl;
