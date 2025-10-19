@@ -28,10 +28,10 @@ void numberGame() {
         attempts++;
 
         if (guess < number) {
-            cout << "Too low, try again!" << endl;
+            cout << "Too low, try again! 🔄" << endl;
         }
         else if (guess > number) {
-            cout << "Too high, try again!" << endl;
+            cout << "Too high, try again! 🔄" << endl;
         }
         else {
             cout << "🎉 You got it! The number was " << number << "." << endl;
@@ -47,11 +47,11 @@ int main() {
     while (again == 'y' || again == 'Y') {
         numberGame();
 
-        cout << "\nWould you like to play again? (y/n): ";
+        cout << "\nWould you like to play again? 😺 (y/n): ";
         cin >> again;
         cout << endl;
     }
 
-    cout << "Thanks for playing! Goodbye!" << endl;
+    cout << "Thanks for playing! Goodbye!🙂" << endl;
     return 0;
 }
