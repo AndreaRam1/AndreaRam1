@@ -1,5 +1,5 @@
 /* CSC 134
- M3BONUS - My Version
+ M3BONUS - Number Guessing Game
 Andrea Ramirez
 Date: 10/19/25
 My own version of the Number Guessing Game based on the AI example. */
