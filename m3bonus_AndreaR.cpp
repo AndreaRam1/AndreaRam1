@@ -48,7 +48,7 @@ int main() {
         cin >> again;
     }
 
-    cout << "Thanks for playing my version of the game!" << endl;
+    cout << "Thanks for playing my version of the game!🙂" << endl;
 
     return 0;
 }
