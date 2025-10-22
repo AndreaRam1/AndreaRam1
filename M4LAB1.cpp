@@ -7,7 +7,7 @@ Block FOR LOOP
 using namespace std;
 
 int main() {
-    cout << "M4LAB\n";
+    cout << "M4LAB 📦\n";
     int height, width; 
     
     cout << "Give me the height of your block: " << endl;
@@ -16,12 +16,12 @@ int main() {
     cout << "Give me the width of your block:" << endl;
     cin >> width;
 
-    cout << "\n One row" << endl;
+    cout << "\n One row 📏" << endl;
     for ( int i = 0; i < height; i++){
         cout << "#" << endl;
     }
 
-    cout << "\n One column" << endl;
+    cout << "\n One column 📏" << endl;
     for (int j = 0; j < width; j++){
         cout << "#" << endl;
     }
