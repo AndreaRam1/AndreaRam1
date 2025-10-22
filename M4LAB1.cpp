@@ -10,19 +10,22 @@ int main() {
     cout << "M4LAB\n";
     int height, width; 
     
-    cout << "How tall should the block be?" << endl;
+    cout << "Give me the height of your block: " << endl;
     cin >> height;
 
-    cout << "How wide the block should be?" << endl;
+    cout << "Give me the width of your block:" << endl;
     cin >> width;
 
-    cout << "\nHere is your block: \n" << endl;
+    cout << "\nHere is your block 🗿: \n" << endl;
 
-    for ( int i = 0; i < height; i++){
-        for ( int j = 0; j < width; j++){
+    for ( int i = 0; i < height; i++){  //conditions for rows (i)
+        for ( int j = 0; j < width; j++){ //conditions dor columns (j)
             cout << "# ";
         }
         cout << endl; 
     }
+    cout << "\n💸\n" << endl;
+
     return 0;
+
 }
