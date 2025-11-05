@@ -22,6 +22,8 @@ int main() {
         printResult(count, result);
         count++;
     }
+    cout << "End of program" << endl;
+
     return 0;
 }
 /*------------------------------------------------------------
