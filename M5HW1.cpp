@@ -1,3 +1,9 @@
+// CSC 134
+//M5HW1 === GOLD
+//Andrea Ramirez Cabello 
+//11/13/25
+
+
 #include <iostream>
 #include <string>
 #include <iomanip>   // Only used for setprecision (allowed in basic intro)
