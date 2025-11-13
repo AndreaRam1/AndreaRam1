@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include <string>
-#include <iomanip>   // Only used for setprecision (allowed in basic intro)
+#include <iomanip>   // Only used for setprecision
 using namespace std;
 
 /*
