@@ -1,7 +1,8 @@
 // M6BONUS1 - Text Adventure using arrays, enums, and adjacency list
 // Theme: Metal Gear Solid 3: Snake Eater 🐍
-// AI assistance: ChatGPT helped brainstorm locations, items, and structure.
-// I adapted names, descriptions, and flow to match the Snake Eater theme.
+// CSC 134
+//Andrea Ramirez Cabello 
+//12/03/2025
 
 #include <iostream>
 #include <string>
@@ -32,7 +33,6 @@ enum Room {
 
 int main() {
 
-    // (HYBRID COMMENT #1) 🌿
     // AI suggested:
     // string roomNames[NUM_ROOMS] = {"Jungle","Cave","River","Warehouse","Base"};
     // I renamed them to be closer to specific Snake Eater locations.
@@ -44,7 +44,6 @@ int main() {
         "Groznyj Grad (Outer Compound)"
     };
     
-    // (HYBRID COMMENT #2) 🕵️
     // AI suggested very short descriptions like:
     // "A jungle with trees." or "A military base with guards."
     // I expanded them to better match the atmosphere of MGS3: Snake Eater.
@@ -56,7 +55,6 @@ int main() {
         "The outer compound of Groznyj Grad, with searchlights sweeping and guards on patrol 🚨."
     };
 
-    // (HYBRID COMMENT #3) 🎒
     // AI suggested using a vector for items:
     // vector<string> items = {"cigar","radio","tranq gun"};
     // I stayed with basic arrays since the assignment focuses on regular arrays.
@@ -70,7 +68,6 @@ int main() {
     // Snake starts with items in world: cigar in Jungle, codec in Warehouse
     int itemLocations[NUM_ITEMS] = { DENSE_JUNGLE, ABANDONED_WAREHOUSE };
 
-    // (HYBRID COMMENT #4) 🗺️
     // AI suggested moving this into a separate setupConnections function:
     /*
        void setupConnections(int c[NUM_ROOMS][NUM_DIRECTIONS]) {
@@ -102,7 +99,6 @@ int main() {
     int currentRoom = DENSE_JUNGLE;
     bool gameRunning = true;
 
-    // (HYBRID COMMENT #5) 🎮
     // AI suggested using a normal function:
     /*
        void showRoom(int room) {
