@@ -1,6 +1,7 @@
 // M6BONUS1 - Text Adventure using arrays, enums, and adjacency list
-// AI assistance: ChatGPT helped brainstorm room themes and commands.
-// I modified the descriptions and overall structure to fit my idea.
+// Theme: Metal Gear Solid 3: Snake Eater 🐍
+// AI assistance: ChatGPT helped brainstorm locations, items, and structure.
+// I adapted names, descriptions, and flow to match the Snake Eater theme.
 
 #include <iostream>
 #include <string>
@@ -19,96 +20,104 @@ const string DIRECTION_NAMES[NUM_DIRECTIONS] = {
     "north", "east", "south", "west"
 };
 
-// Define constants for rooms
+// Define constants for rooms (Snake Eater style)
 enum Room {
-    ATRIUM = 0,
-    ARCANE_LIBRARY = 1,
-    ALCHEMY_LAB = 2,
-    MOON_GARDEN = 3,
-    CATACOMBS = 4,
+    DENSE_JUNGLE = 0,
+    MOUNTAIN_PASS = 1,
+    RIVERBANK = 2,
+    ABANDONED_WAREHOUSE = 3,
+    GROZNYJ_GRAD = 4,
     NUM_ROOMS = 5
 };
 
 int main() {
 
+    // (HYBRID COMMENT #1) 🌿
     // AI suggested:
-    // string roomNames[NUM_ROOMS] = {"Atrium","Library","Lab","Garden","Basement"};
-    // I changed them to a more magical theme to fit my idea.
+    // string roomNames[NUM_ROOMS] = {"Jungle","Cave","River","Warehouse","Base"};
+    // I renamed them to be closer to specific Snake Eater locations.
     string roomNames[NUM_ROOMS] = {
-        "Moonlit Atrium",
-        "Arcane Library",
-        "Alchemy Lab",
-        "Moon Garden",
-        "Forgotten Catacombs"
+        "Dense Jungle",
+        "Mountain Pass",
+        "Riverbank",
+        "Abandoned Warehouse",
+        "Groznyj Grad (Outer Compound)"
     };
     
-    // AI suggested very simple descriptions like:
-    // "A small room with shelves." or "A dark hallway."
-    // I rewrote them to make the atmosphere more mysterious.
+    // (HYBRID COMMENT #2) 🕵️
+    // AI suggested very short descriptions like:
+    // "A jungle with trees." or "A military base with guards."
+    // I expanded them to better match the atmosphere of MGS3: Snake Eater.
     string roomDescriptions[NUM_ROOMS] = {
-        "Tall glass windows let in pale moonlight. A faint hum of magic fills the air.",
-        "Shelves of dusty tomes reach the ceiling. A ladder creaks softly in the corner.",
-        "Tables cluttered with bubbling potions and strange ingredients. The room smells of herbs and smoke.",
-        "An open-air garden under the stars, with glowing flowers and a stone bench.",
-        "Cold stone walls and distant dripping water. Ancient symbols are carved into the floor."
+        "Tall grass, thick trees, and the sound of distant wildlife. Perfect for camouflage 🐍.",
+        "A steep rocky path with narrow ledges and a cold wind howling through the mountains.",
+        "A quiet riverbank with shallow water, muddy prints, and the echo of frogs nearby.",
+        "A dusty storage building with old crates, scattered supplies, and creaking wooden floors.",
+        "The outer compound of Groznyj Grad, with searchlights sweeping and guards on patrol 🚨."
     };
 
+    // (HYBRID COMMENT #3) 🎒
     // AI suggested using a vector for items:
-    // vector<string> items = {"key","crystal"};
-    // I kept arrays instead because the assignment requires them.
+    // vector<string> items = {"cigar","radio","tranq gun"};
+    // I stayed with basic arrays since the assignment focuses on regular arrays.
     const int NUM_ITEMS = 2;
     const int INVENTORY = -1;
-    string itemNames[NUM_ITEMS] = { "key", "crystal" };
+    string itemNames[NUM_ITEMS] = { "cigar", "codec_radio" };
     string itemDescriptions[NUM_ITEMS] = {
-        "A small brass key with a moon-shaped bow.",
-        "A faintly glowing crystal that hums when you hold it."
+        "A cigar that calms your nerves, but might give away your position if enemies are close.",
+        "A compact codec radio used to contact support and receive mission updates 📡."
     };
-    int itemLocations[NUM_ITEMS] = { CATACOMBS, ARCANE_LIBRARY };
+    // Snake starts with items in world: cigar in Jungle, codec in Warehouse
+    int itemLocations[NUM_ITEMS] = { DENSE_JUNGLE, ABANDONED_WAREHOUSE };
 
-    // AI suggested using a function like setupConnections() but:
+    // (HYBRID COMMENT #4) 🗺️
+    // AI suggested moving this into a separate setupConnections function:
     /*
        void setupConnections(int c[NUM_ROOMS][NUM_DIRECTIONS]) {
-           c[ATRIUM][NORTH] = ARCANE_LIBRARY;
+           c[DENSE_JUNGLE][NORTH] = MOUNTAIN_PASS;
            ...
        }
     */
-    // I kept the initialization inline to keep the file simpler for grading.
+    // I kept everything inline to make it easier to read and grade in one file.
     int connections[NUM_ROOMS][NUM_DIRECTIONS];
     for (int i = 0; i < NUM_ROOMS; i++)
         for (int j = 0; j < NUM_DIRECTIONS; j++)
             connections[i][j] = -1;
 
-    connections[ATRIUM][NORTH] = ARCANE_LIBRARY;
-    connections[ATRIUM][EAST] = ALCHEMY_LAB;
-    connections[ATRIUM][WEST] = MOON_GARDEN;
+    // Map layout (very simple mission path):
+    // Dense Jungle -> Mountain Pass -> Riverbank -> Warehouse -> Groznyj Grad
+    connections[DENSE_JUNGLE][NORTH] = MOUNTAIN_PASS;
 
-    connections[ARCANE_LIBRARY][SOUTH] = ATRIUM;
+    connections[MOUNTAIN_PASS][SOUTH] = DENSE_JUNGLE;
+    connections[MOUNTAIN_PASS][EAST]  = RIVERBANK;
 
-    connections[ALCHEMY_LAB][WEST] = ATRIUM;
-    connections[ALCHEMY_LAB][SOUTH] = CATACOMBS;
+    connections[RIVERBANK][WEST]  = MOUNTAIN_PASS;
+    connections[RIVERBANK][NORTH] = ABANDONED_WAREHOUSE;
 
-    connections[MOON_GARDEN][EAST] = ATRIUM;
+    connections[ABANDONED_WAREHOUSE][SOUTH] = RIVERBANK;
+    connections[ABANDONED_WAREHOUSE][EAST]  = GROZNYJ_GRAD;
 
-    connections[CATACOMBS][NORTH] = ALCHEMY_LAB;
+    connections[GROZNYJ_GRAD][WEST] = ABANDONED_WAREHOUSE;
 
-    int currentRoom = ATRIUM;
+    int currentRoom = DENSE_JUNGLE;
     bool gameRunning = true;
 
-    // AI suggested making showRoom() a normal function:
+    // (HYBRID COMMENT #5) 🎮
+    // AI suggested using a normal function:
     /*
        void showRoom(int room) {
-           cout << roomNames[room];
+           cout << roomNames[room] << endl;
        }
     */
-    // I kept it as a lambda to keep related code grouped together.
+    // I used a lambda so I can easily capture currentRoom and arrays without extra parameters.
     auto showRoom = [&](bool desc = true) {
-        cout << "\nYou are in the " << roomNames[currentRoom] << ".\n";
+        cout << "\nYou are in: " << roomNames[currentRoom] << "\n";
         if (desc) cout << roomDescriptions[currentRoom] << "\n";
 
         bool foundItem = false;
         for (int i = 0; i < NUM_ITEMS; i++) {
             if (itemLocations[i] == currentRoom) {
-                if (!foundItem) cout << "You see: ";
+                if (!foundItem) cout << "You notice an item here: ";
                 cout << itemNames[i] << " ";
                 foundItem = true;
             }
@@ -127,37 +136,39 @@ int main() {
         cout << "\n";
     };
 
-    cout << "Welcome to the Moonlit Academy.\n";
+    cout << "METAL GEAR SOLID 3: SNAKE EATER (Text Adventure) 🐍\n";
+    cout << "Mission: Infiltrate through the jungle and reach Groznyj Grad.\n";
+    cout << "Type: north/east/south/west (or n/e/s/w), take, quit.\n";
     showRoom();
 
     while (gameRunning) {
         string command;
-        cout << "\nWhat would you like to do? ";
+        cout << "\nWhat would you like to do, Snake? ";
         cin >> command;
 
         if (command == "north" || command == "n") {
             if (connections[currentRoom][NORTH] != -1) {
                 currentRoom = connections[currentRoom][NORTH];
                 showRoom();
-            } else cout << "You can't go that way.\n";
+            } else cout << "Major Zero: \"You can't go that way, Snake.\" ❌\n";
         }
         else if (command == "east" || command == "e") {
             if (connections[currentRoom][EAST] != -1) {
                 currentRoom = connections[currentRoom][EAST];
                 showRoom();
-            } else cout << "You can't go that way.\n";
+            } else cout << "You check your map, but there's no path east.\n";
         }
         else if (command == "south" || command == "s") {
             if (connections[currentRoom][SOUTH] != -1) {
                 currentRoom = connections[currentRoom][SOUTH];
                 showRoom();
-            } else cout << "You can't go that way.\n";
+            } else cout << "Dense foliage blocks your way to the south.\n";
         }
         else if (command == "west" || command == "w") {
             if (connections[currentRoom][WEST] != -1) {
                 currentRoom = connections[currentRoom][WEST];
                 showRoom();
-            } else cout << "You can't go that way.\n";
+            } else cout << "You can't move any further west from here.\n";
         }
         else if (command == "take") {
             bool took = false;
@@ -170,16 +181,24 @@ int main() {
                     break;
                 }
             }
-            if (!took) cout << "There is nothing here you can take.\n";
+            if (!took) cout << "There's nothing here you can take, Snake.\n";
         }
         else if (command == "quit" || command == "q") {
+            cout << "Mission aborted. Returning to the main menu... 🎧\n";
             gameRunning = false;
         }
         else {
-            cout << "I don't understand that command.\n";
+            cout << "The codec stays silent. That command isn't recognized.\n";
+        }
+
+        // Optional: simple win condition if player reaches Groznyj Grad
+        if (currentRoom == GROZNYJ_GRAD) {
+            cout << "\nYou've reached Groznyj Grad. The real mission starts now... 🎯\n";
+            cout << "For this demo, we'll end the simulation here.\n";
+            gameRunning = false;
         }
     }
 
-    cout << "\nThanks for playing!\n";
+    cout << "\nThanks for playing Snake Eater (text edition)! 🐍\n";
     return 0;
 }
