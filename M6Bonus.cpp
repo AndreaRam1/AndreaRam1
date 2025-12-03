@@ -187,7 +187,7 @@ int main() {
             cout << "The codec stays silent. That command isn't recognized.\n";
         }
 
-        // Optional: simple win condition if player reaches Groznyj Grad
+        //win condition if player reaches Groznyj Grad
         if (currentRoom == GROZNYJ_GRAD) {
             cout << "\nYou've reached Groznyj Grad. The real mission starts now... 🎯\n";
             cout << "For this demo, we'll end the simulation here.\n";
