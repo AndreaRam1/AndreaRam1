@@ -42,7 +42,6 @@ int main() {
         "Forgotten Catacombs"
     };
     
-    // (HYBRID COMMENT #2)
     // AI suggested very simple descriptions like:
     // "A small room with shelves." or "A dark hallway."
     // I rewrote them to make the atmosphere more mysterious.
@@ -54,7 +53,6 @@ int main() {
         "Cold stone walls and distant dripping water. Ancient symbols are carved into the floor."
     };
 
-    // (HYBRID COMMENT #3)
     // AI suggested using a vector for items:
     // vector<string> items = {"key","crystal"};
     // I kept arrays instead because the assignment requires them.
@@ -67,7 +65,6 @@ int main() {
     };
     int itemLocations[NUM_ITEMS] = { CATACOMBS, ARCANE_LIBRARY };
 
-    // (HYBRID COMMENT #4)
     // AI suggested using a function like setupConnections() but:
     /*
        void setupConnections(int c[NUM_ROOMS][NUM_DIRECTIONS]) {
@@ -97,7 +94,6 @@ int main() {
     int currentRoom = ATRIUM;
     bool gameRunning = true;
 
-    // (HYBRID COMMENT #5)
     // AI suggested making showRoom() a normal function:
     /*
        void showRoom(int room) {
